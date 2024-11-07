@@ -93,3 +93,100 @@ body {
     transform: scale(1.015);
     transition: all 0.7s ease;
 }
+
+.contenedor {
+    width: 100%;
+    height: 1000px;
+    background: url("https://santaclausvillage.info/wp-content/uploads/2023/06/hero-winter-scaled.jpg") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    /* Las 3 propiedades para realizar el GlassMorphism */
+    background-color: #f4ecec1d;
+    box-shadow: 0 8px 32px 0 #020202;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    overflow: hidden;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 0;
+    left: 450px;
+    background-color: #f9f1f560;
+    box-shadow: 0 8px 32px 0 #11111156;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10rem;
+    overflow: hidden;
+}
+/* Con la siguiente linea de código hago el efecto de brillo que recorre la caja */
+
+.box::before {
+    position: fixed;
+    content: "";
+    box-shadow: 0 0 100px 40px #f5f3f330;
+    top: -10px;
+    left: -100px;
+    transform: rotate(-45deg);
+    height: 50rem;
+    transition: all 0.7s ease;
+}
+
+.box:hover::before {
+    filter: brightness(0.5);
+    top: -100%;
+    left: 200%;
+}
+
+.box:hover {
+    border: 1px solid #ffffff44;
+    box-shadow: 0 7px 50px 10px #1111116d;
+    transform: scale(1.015);
+    transition: all 0.7s ease;
+}
+
+/* Hacer un circulo interior que se achiche con hover */
+.circle::before {
+    position: fixed;
+    content: "";
+    box-shadow: 0 0 100px 40px #f5f3f316;
+    top: 0px;
+    left: 0px;
+    transition: 1s ease-in-out all;
+}
+
+.circle:hover {
+    scale: 1.01;
+    z-index: 2;
+}
+
+/* @keyframes reduccion {
+    0% {
+        transform: scale(100%);
+    }
+
+    100% {
+        transform: scale(0%);
+    }
+} */
+
+.circle:hover::before {
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+    transform: scale(0);
+    /* animation: reduccion 2s alternate infinite; */
+    transition: 1s ease-in-out all;
+}
