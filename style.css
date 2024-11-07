@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("https://tntsports.com.ar/__export/1686663824468/sites/tntsports/img/2023/05/27/seleccion_argentina_campeon_del_mundo.jpg_115403382.jpg") 
+    no-repeat center/cover;
+    margin-top: 200px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 500px;
+    background: linear-gradient(0deg, #3434347f 0%, #161616ba 100%);
+    border-radius: 1rem;
+    border: 1px solid #adabab73;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px #111;
+    transition: all 0.7s ease;
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header h2 {
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-header img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-body p {
+    color: #ffffffbd;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 5px;
+}
+
+/* Con ::before agregamos elementos que no estan en el HTML. En este caso es el efecto de brillo que recorre la card */
+.card::before {
+    position: fixed;
+    content: "";
+    box-shadow: 0 0 100px 40px #ffffff69;
+    top: -10%;
+    left: -100%;
+    transform: rotate(-45deg);
+    height: 60rem;
+    transition: 0.7s all;
+}
+
+.card:hover::before {
+    filter: brightness(0.5);
+    top: -100%;
+    left: 200%;
+}
+
+.card:hover {
+    border: 1px solid #ffffff44;
+    box-shadow: 0 7px 50px 10px #1111116d;
+    transform: scale(1.015);
+    transition: all 0.7s ease;
+}
